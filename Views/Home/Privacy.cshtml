@@ -1,0 +1,175 @@
+﻿@model List<travel.Models.Trap>
+
+
+@{
+    ViewData["Title"] = "SkyNet";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="col-sm-4" ><div class="col-sm-offset-4" style="margin-left:25%;">
+<form asp-controller="Home" asp-action="Privacy" method="post">
+  
+  <div class="form-group">
+    <label for="origin">Origin</label>
+    <select class="form-control" name="origin" id="origin">
+      <option value="CMN">Casablanca</option>
+      <option value="MXP">Milan</option>
+      <option value="VIE">Vienna</option>
+      <option value="AGA">AGADIR</option>
+      <option value="AUH">Abu debi</option>
+      <option value="SPL">Amsterdam</option>
+      <option value="BCN">Barcelona</option>
+      <option value="PEK">Beijing</option>
+      <option value="CDG">Paris</option>
+      <option value="LCY">London</option>
+      <option value="MAD">Madrid</option>
+      <option value="SVQ">Seville</option>
+      <option value="HAM">Hamburg</option>
+      <option value="SXF">Berlin</option>
+      <option value="DEL">Delhi – Indira Ghandi</option>
+      <option value="CAI">Cairo</option>
+      <option value="BRU">Brussels</option>
+      <option value="BHX">Birmingham</option>
+      <option value="BEY">Beirut</option>
+      <option value="DCA">Washington – Ronald Reagan National	</option>
+      <option value="LAX">Los Angeles</option>
+      <option value="JFK">New york</option>
+      <option value="BWI">Baltimore/Washington Int´l</option>
+</select>
+  </div>
+
+  <div class="form-group">
+    <label for="dest">Destination</label>
+    <select class="form-control" name="dest"  id="dest">
+      <option value="CMN">Casablanca</option>
+      <option value="MXP">Milan</option>
+      <option value="VIE">Vienna</option>
+      <option value="AGA">AGADIR</option>
+      <option value="AUH">Abu debi</option>
+      <option value="SPL">Amsterdam</option>
+      <option value="BCN">Barcelona</option>
+      <option value="PEK">Beijing</option>
+      <option value="CDG">Paris</option>
+      <option value="LCY">London</option>
+      <option value="MAD">Madrid</option>
+      <option value="SVQ">Seville</option>
+      <option value="HAM">Hamburg</option>
+      <option value="SXF">Berlin</option>
+      <option value="DEL">Delhi – Indira Ghandi</option>
+      <option value="CAI">Cairo</option>
+      <option value="BRU">Brussels</option>
+      <option value="BHX">Birmingham</option>
+      <option value="BEY">Beirut</option>
+      <option value="DCA">Washington – Ronald Reagan National	</option>
+      <option value="LAX">Los Angeles</option>
+      <option value="JFK">New york</option>
+      <option value="BWI">Baltimore/Washington Int´l</option>
+
+    </select>
+  </div>
+<div class="form-group">
+    <label for="date">Date to go</label>
+    
+     <input  class="form-control" type="date" name="date" id="date" />
+  </div>
+
+  <div class="form-group">
+    <label for="datR">Date to Retrun</label>
+    
+     <input  class="form-control" type="date" name="datR" id="datR" />
+  </div>
+  
+
+<div class="form-group">
+  
+<input  class="btn btn-default" type="submit" name="btn" value="submit"/>
+  </div>
+
+</form>
+</div>
+</div>
+
+<div class="container">
+<div class="col-sm-10">
+
+<table class="table" >
+  <thead><tr>
+     <th> Origine</th>
+     <th>Destination </th>
+     <th> Date</th>
+     <th> Price(MAD)</th>
+     <th> Airline</th>
+     
+
+  </tr> </thead>
+<tbody>
+  @if( Model!= null){
+foreach (var item in Model)
+{
+    
+
+       @: <tr>
+            <td rowspan="2">
+                @Html.DisplayFor(modelItem => item.origine)
+            </td>
+            <td rowspan="2">
+                @Html.DisplayFor(modelItem => item.destination)
+            </td>
+
+
+ if(item != null){
+
+
+            for(var i=0; i<item.Q.Count;i++) {
+                    if( i!=0)
+                    { 
+                       @: <tr>
+                     }
+  
+                      <td>
+                @Html.DisplayFor(modelItem => item.Q[i].date )
+            </td>
+            <td>
+              @Html.DisplayFor(modelItem => item.Q[i].price)
+            </td>
+          <td>
+                @Html.DisplayFor(modelItem => item.Q[i].airline )
+          </td>
+          @:</tr>
+
+            }
+            
+}}
+   
+}
+            
+
+</tbody>
+</table>
+ 
+
+</div>
+   
+
+
+</div>
+
+<script type="text/javascript" src="~/airports.json"></script>
+<script type="text/javascript"  >
+$.getJSON( "../airports.json", function( data ) {
+  var items = [];
+  $.each( data, function( key, value ) {
+   if(key<100){
+
+          items.push( "<option value='" + value["code"]+ "'>" + value["city"]+"-"+value["country"] + "</option>" );
+   
+   }});
+ 
+  $( "<select/>", {
+    "class": "form-control",
+    html: items.join( "" )
+  }).appendTo( "divdivor" );
+});
+
+
+</script>
