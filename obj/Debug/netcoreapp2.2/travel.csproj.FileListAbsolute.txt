@@ -15,7 +15,6 @@
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/travel.TagHelpers.output.cache
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/travel.RazorCoreGenerate.cache
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs
-/home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Home/Privacy.g.cshtml.cs
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_Layout.g.cshtml.cs
@@ -28,5 +27,4 @@
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/travel.dll
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/travel.pdb
 /home/akura/Software/travel/obj/Debug/netcoreapp2.2/travel.csproj.CopyComplete
-/home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Home/test.g.cshtml.cs
-/home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Test/test.g.cshtml.cs
+/home/akura/Software/travel/obj/Debug/netcoreapp2.2/Razor/Views/Home/flight.g.cshtml.cs

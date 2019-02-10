@@ -14,7 +14,7 @@ namespace travel.Controllers
 {
     public class HomeController : Controller
     {
-
+        // just to see how the response is? so that you can have ana idea about what do u want to display
         public IActionResult Index()
         {
             // string url="https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/MA/MAD/en-US/MXP-sky/CMN-sky/2019-01-20?inboundpartialdate=2019-02-01";
@@ -29,7 +29,7 @@ namespace travel.Controllers
                         return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult flight()
 
         { 
 
@@ -138,23 +138,9 @@ namespace travel.Controllers
             return tr ;
      }
 
-public IActionResult test(){
-   try
-   {
-       
-    ViewData["msg"]=Request.Form["tt"];
 
-    ViewData["mdd"]=Request.Form["ttd"].ToString();
-    return View();
-       
-   }
-   catch (System.Exception)
-   {
-       ViewData["msg"]="nothing"; 
-       return View();
-   }
     
-}
+
 
 
 
